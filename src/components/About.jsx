@@ -52,7 +52,7 @@ const About = () => {
                         </h3>
                         <div className="pl-6 space-y-2">
                             <p className="text-gray-300">
-                                I build <span className="text-primary-400 font-semibold">full-stack web applications</span> with focus on clean architecture, scalability, and performance.
+                                I build <span className="text-primary-400 font-semibold">full-stack/DevOps web applications</span> with focus on clean architecture, scalability, and performance.
                             </p>
                             <p className="text-gray-300">
                                 My approach combines <span className="text-primary-400 font-semibold">modern backend frameworks</span> (Laravel, Java, Node.js, ASP.NET Core) with <span className="text-primary-400 font-semibold">dynamic frontends</span> (React, Angular, Vue, Next), fully containerized with <span className="text-primary-400 font-semibold">Docker & Docker Compose</span> for consistent development and production environments.
