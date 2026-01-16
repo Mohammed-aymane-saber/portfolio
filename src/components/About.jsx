@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { HiOutlineAcademicCap, HiOutlineLightBulb, HiOutlineRocketLaunch, HiOutlineCommandLine } from 'react-icons/hi2';
 
 const About = () => {
     const containerVariants = {
@@ -6,80 +7,160 @@ const About = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2
+                staggerChildren: 0.15
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 }
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
+    };
+
+    const cardVariants = {
+        initial: { scale: 0.95, opacity: 0 },
+        animate: {
+            scale: 1,
+            opacity: 1,
+            transition: { duration: 0.5 }
+        },
+        hover: {
+            y: -5,
+            transition: { duration: 0.3 }
+        }
     };
 
     return (
-        <section id="about" className="section bg-gray-950">
-            <div className="container">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+        <section id="about" className="section bg-gray-950 relative overflow-hidden">
+            {/* Background Decoration */}
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+            <div className="container relative z-10">
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="section-title"
+                    className="mb-16"
                 >
-                    About
-                </motion.h2>
+                    <h2 className="section-title mb-4">About Me</h2>
+                    <div className="flex items-center gap-3">
+                        <div className="h-px w-12 bg-primary-500/50" />
+                        <p className="text-gray-400 font-mono text-sm uppercase tracking-widest">
+                            Software Engineer & DevOps Enthusiast
+                        </p>
+                    </div>
+                </motion.div>
 
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
-                    className="max-w-3xl"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid lg:grid-cols-12 gap-12 lg:gap-20"
                 >
-                    <motion.div variants={itemVariants} className="mb-8">
-                        <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                            <span className="text-primary-500">→</span> Education
-                        </h3>
-                        <div className="pl-6">
-                            <p className="text-gray-300 font-medium">École Nationale des Sciences Appliquées (ENSA)</p>
-                            <p className="text-gray-400">Génie Informatique</p>
-                            <p className="text-gray-500 text-sm font-mono">2022 - Present</p>
-                        </div>
-                    </motion.div>
-
-                    <motion.div variants={itemVariants} className="mb-8">
-                        <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                            <span className="text-primary-500">→</span> What I Do
-                        </h3>
-                        <div className="pl-6 space-y-2">
-                            <p className="text-gray-300">
-                                I build <span className="text-primary-400 font-semibold">full-stack/DevOps web applications</span> with focus on clean architecture, scalability, and performance.
-                            </p>
-                            <p className="text-gray-300">
-                                My approach combines <span className="text-primary-400 font-semibold">modern backend frameworks</span> (Laravel, Java, Node.js, ASP.NET Core) with <span className="text-primary-400 font-semibold">dynamic frontends</span> (React, Angular, Vue, Next), fully containerized with <span className="text-primary-400 font-semibold">Docker & Docker Compose</span> for consistent development and production environments.
-                            </p>
-                            <p className="text-gray-300">
-                                I implement <span className="text-primary-400 font-semibold">REST APIs</span>, handle authentication/authorization, and follow software engineering best practices including design patterns and clean code principles.
-                            </p>
-                            <p className="text-gray-300">
-                                On the <span className="text-primary-400 font-semibold">DevOps</span> side, I automate workflows using <span className="text-primary-400 font-semibold">GitHub Actions</span> (CI/CD), manage infrastructure on <span className="text-primary-400 font-semibold">AWS & Azure</span>, and have a solid command of <span className="text-primary-400 font-semibold">Linux (CLI)</span> and <span className="text-primary-400 font-semibold">Git</span> for version control.
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    <motion.div variants={itemVariants}>
-                        <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                            <span className="text-primary-500">→</span> Looking For
-                        </h3>
-                        <div className="pl-6">
-                            <p className="text-gray-300">
-                                <span className="text-primary-400 font-semibold">Internship</span> or <span className="text-primary-400 font-semibold">Junior DevOps/Developer</span> opportunities where I can contribute to real-world projects, learn from experienced engineers, and grow my technical expertise.
-                            </p>
-                            <div className="mt-4 inline-flex items-center gap-2 text-sm text-gray-400 font-mono">
-                                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                                Available for opportunities
+                    {/* Narrative Column */}
+                    <div className="lg:col-span-12 xl:col-span-7 space-y-8">
+                        <motion.div variants={itemVariants} className="space-y-6">
+                            <div className="flex items-start gap-4">
+                                <div className="p-3 bg-primary-500/10 rounded-xl border border-primary-500/20 text-primary-400 shrink-0 mt-1">
+                                    <HiOutlineCommandLine className="text-2xl" />
+                                </div>
+                                <div className="space-y-4">
+                                    <h3 className="text-2xl font-bold text-white">The Engineering Mindset</h3>
+                                    <p className="text-gray-300 leading-relaxed text-lg">
+                                        I build <span className="text-primary-400 font-semibold underline decoration-primary-500/30 underline-offset-4">Full-stack & DevOps web applications</span> with a meticulous focus on clean architecture, scalability, and robust performance. My goal is to bridge the gap between complex backend logic and seamless user experiences.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
+
+                            <div className="pl-14 space-y-4 text-gray-400 leading-relaxed border-l border-gray-800 ml-7">
+                                <p>
+                                    My approach combines <span className="text-white font-medium">modern backend frameworks</span> like Laravel, Java (Spring Boot), and ASP.NET Core with <span className="text-white font-medium">reactive frontends</span> using React, Vue, and Next.js.
+                                </p>
+                                <p>
+                                    I am a strong advocate for <span className="text-primary-400 font-mono">everything-as-code</span>. From implementing RESTful APIs with advanced security patterns to containerizing entire environments with <span className="text-white font-medium">Docker</span>, I ensure consistency from local development to production.
+                                </p>
+                                <p>
+                                    On the <span className="text-primary-400 font-semibold">DevOps</span> front, I master automated pipelines using <span className="text-white font-medium">GitHub Actions</span> and feel at home managing cloud infrastructures on <span className="text-white font-medium">AWS & Azure</span>.
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Quick Stats/Cards Column */}
+                    <div className="lg:col-span-12 xl:col-span-5 space-y-6">
+                        {/* Education Card */}
+                        <motion.div
+                            variants={cardVariants}
+                            whileHover="hover"
+                            className="bg-gray-900/40 backdrop-blur-xl border border-gray-800 p-8 rounded-3xl relative overflow-hidden group"
+                        >
+                            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                                <HiOutlineAcademicCap className="text-8xl text-primary-500" />
+                            </div>
+
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-3 text-primary-400 mb-6">
+                                    <HiOutlineAcademicCap className="text-2xl" />
+                                    <span className="text-xs font-mono font-bold uppercase tracking-[0.2em]">Academic Path</span>
+                                </div>
+                                <h4 className="text-xl font-bold text-white mb-2">École Nationale des Sciences Appliquées</h4>
+                                <p className="text-primary-400 font-medium mb-1">Génie Informatique (Full-stack & DevOps)</p>
+                                <p className="text-gray-500 text-sm font-mono tracking-tighter">2022 — PRESENT • ENSA TETOUAN</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Current Focus Card */}
+                        <motion.div
+                            variants={cardVariants}
+                            whileHover="hover"
+                            className="bg-gray-900/40 backdrop-blur-xl border border-gray-800 p-8 rounded-3xl relative overflow-hidden group"
+                        >
+                            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                                <HiOutlineLightBulb className="text-8xl text-yellow-500" />
+                            </div>
+
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-3 text-yellow-400 mb-6">
+                                    <HiOutlineLightBulb className="text-2xl" />
+                                    <span className="text-xs font-mono font-bold uppercase tracking-[0.2em]">Current Focus</span>
+                                </div>
+                                <p className="text-gray-300 leading-relaxed mb-6">
+                                    I am currently deepening my expertise in <span className="text-white font-semibold">Cloud Computing</span> and <span className="text-white font-semibold">DevOps</span>.
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                    {['Docker', 'Kubernetes', 'Terraform', 'CI/CD', 'AWS'].map(tag => (
+                                        <span key={tag} className="px-3 py-1 bg-gray-800/50 rounded-full text-[10px] font-mono text-gray-400 border border-gray-700">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Availability Bar */}
+                        <motion.div
+                            variants={cardVariants}
+                            className="bg-primary-500/5 border border-primary-500/20 p-6 rounded-2xl flex items-center justify-between group"
+                        >
+                            <div className="flex items-center gap-4">
+                                <div className="relative">
+                                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping opacity-75"></div>
+                                </div>
+                                <div>
+                                    <p className="text-white font-bold text-sm">Open for Opportunities</p>
+                                    <p className="text-gray-500 text-xs">Ready for Internship / Junior Roles</p>
+                                </div>
+                            </div>
+                            <HiOutlineRocketLaunch className="text-2xl text-primary-500/50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        </motion.div>
+                    </div>
                 </motion.div>
             </div>
         </section>
