@@ -51,6 +51,7 @@ const Projects = () => {
             highlights: ['AI-powered Chatbot', 'Real-time Tracking', 'Asynchronous Web Services', 'Admin Management Suite'],
             gridSize: 'lg:col-span-1'
         },
+
         {
             id: 3,
             title: 'DevOps CI/CD Pipeline',
@@ -86,7 +87,66 @@ const Projects = () => {
             image: '/projects/systemepda.png',
             highlights: ['Multi-platform (Web & Mobile)', 'Inertia & Laravel 12', 'Stock Real-time', 'Architecture Monorepo'],
             gridSize: 'lg:col-span-2'
+        },
+         
+         {
+            id: 5,
+            title: 'PétitionsEnLigne - Plateforme de Mobilisation',
+            shortDesc: 'Système de création et signature de pétitions avec suivi de progression.',
+            description: 'Une plateforme permettant aux utilisateurs de créer, signer et soutenir des causes sociales. Elle inclut une gestion dynamique des signatures avec objectifs, barres de progression et notifications.',
+            problem: 'Besoin d\'un outil centralisé et sécurisé pour faciliter la mobilisation communautaire et le suivi de l\'impact des pétitions en ligne.',
+            stack: ['PHP Native', 'MySQL', 'Firebase', 'Tailwind CSS', 'SMTP (PHPMailer)'],
+            architecture: [
+                'Backend Hub : Scripting PHP avec PDO pour une gestion performante des données et des signatures',
+                'Security & Notifications : Authentification Firebase et intégration de PHPMailer pour les confirmations SMTP',
+                'Dynamic UI : Interface moderne avec Tailwind CSS intégrant des animations de défilement (Infinite Scroll)',
+                'Analytics : Calcul automatique du taux de réussite des pétitions par rapport aux objectifs fixés'
+            ],
+            github: 'https://github.com/Mohammed-aymane-saber/Tp3-Gestion-Petition',
+            live: 'https://demo-link.com',
+            highlights: ['Firebase Integration', 'Infinite Scroll UI', 'Progress Bar Tracking', 'SMTP Email Notifications'],
+            image: '/projects/petitions.png',
+            gridSize: 'lg:col-span-2'
+        },
+        {
+            id: 6,
+            title: 'Club & Event Management System',
+            shortDesc: 'Gestion associative complète avec génération automatique de certificats.',
+            description: 'Une plateforme de gestion associative permettant de piloter des clubs universitaires, d\'organiser des événements et de générer automatiquement des certificats de participation.',
+            problem: 'Difficulté pour les administrateurs de suivre les demandes de création de clubs, de gérer les inscriptions aux événements et de produire des attestations de manière industrielle.',
+            stack: ['PHP Native', 'MySQL', 'Bootstrap', 'TCPDF/FPDF (Certificats)', 'Google reCAPTCHA', 'Cron Jobs'],
+            architecture: [
+                'Modular Logic : Architecture PHP structurée par modules (Actions, Admin, Includes) pour une maintenance facilitée',
+                'Automation Engine : Utilisation de tâches planifiées (Cron Jobs) pour la mise à jour automatique des statuts d\'événements',
+                'Security Layer : Protection anti-spam via Google reCAPTCHA et système sécurisé de récupération de mot de passe par jeton',
+                'Document Generation : Moteur de création dynamique de certificats PDF avec prévisualisation pour les participants'
+            ],
+            github: 'https://github.com/AmineElBiydi/Event_Club_Manager',
+            image: '/projects/club.png',
+            highlights: ['Automated PDF Generation', 'Advanced Admin Dashboard', 'Password Recovery Workflow', 'reCAPTCHA Integration'],
+            gridSize: 'lg:col-span-1'
+        },
+         {
+            id: 7,
+            title: 'Sports Facility & Tournament Management System',
+            shortDesc: 'Système de réservation multi-terrains et gestion de tournois sportifs.',
+            description: 'Une plateforme de gestion de complexes sportifs permettant la réservation de terrains par partitions, la gestion d\'équipes et l\'organisation de tournois avec suivi des statistiques.',
+            problem: 'Nécessité de digitaliser la réservation de créneaux sportifs complexes (multi-terrains) et d\'automatiser la gestion des compétitions et des facturations.',
+            stack: ['PHP (MVC)', 'Firebase Cloud Storage', 'TCPDF', 'Clean Architecture', 'Bootstrap', 'JavaScript (AJAX)'],
+            architecture: [
+                'Layered Architecture : Structure rigoureuse avec séparation des responsabilités (Controllers, Services, Repositories, Models)',
+                'Cloud Integration : Utilisation de Firebase pour la gestion des données et du stockage via l\'interface Kreait PHP',
+                'Complex Reservation Engine : Système de gestion de partitions et de créneaux horaires avec vérification de disponibilité en temps réel',
+                'Tournament Management : Module complet pour la création de tournois, gestion de matchs et calcul automatique des statistiques de joueurs'
+            ],
+            github: 'https://github.com/AmineElBiydi/MiniProject_2',
+            live: 'https://demo-link.com',
+            highlights: ['Cloud Integration (Firebase)', 'Tournament & Match Engine', 'Automated Invoicing (TCPDF)', 'Service-Repository Pattern'],
+            image: '/projects/terrains.png',
+            gridSize: 'lg:col-span-3'
         }
+       
+      
     ];
 
     return (
