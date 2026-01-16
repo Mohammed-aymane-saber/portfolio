@@ -19,8 +19,8 @@ const Contact = () => {
                 </svg>
             ),
             label: 'Email',
-            value: 'mohammed.aymane.saber@gmail.com',
-            href: 'mailto:mohammed.aymane.saber@gmail.com',
+            value: 'mohammedaymanesaber@gmail.com',
+            href: 'mailto:mohammedaymanesaber@gmail.com',
             isCopyable: true
         },
         {
