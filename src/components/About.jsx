@@ -72,7 +72,7 @@ const About = () => {
                         </h3>
                         <div className="pl-6">
                             <p className="text-gray-300">
-                                <span className="text-primary-400 font-semibold">Internship</span> or <span className="text-primary-400 font-semibold">Junior Developer</span> opportunities where I can contribute to real-world projects, learn from experienced engineers, and grow my technical expertise.
+                                <span className="text-primary-400 font-semibold">Internship</span> or <span className="text-primary-400 font-semibold">Junior DevOps/Developer</span> opportunities where I can contribute to real-world projects, learn from experienced engineers, and grow my technical expertise.
                             </p>
                             <div className="mt-4 inline-flex items-center gap-2 text-sm text-gray-400 font-mono">
                                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>

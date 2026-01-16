@@ -128,7 +128,7 @@ const Contact = () => {
                         className="mt-12 p-6 bg-gray-900 border border-gray-800 rounded-lg text-center"
                     >
                         <p className="text-gray-400">
-                            Currently looking for <span className="text-primary-400 font-semibold">internship</span> or <span className="text-primary-400 font-semibold">junior developer</span> opportunities.
+                            Currently looking for <span className="text-primary-400 font-semibold">internship</span> or <span className="text-primary-400 font-semibold">junior DevOps/developer</span> opportunities.
                         </p>
                         <div className="mt-4 inline-flex items-center gap-2 text-sm text-gray-500 font-mono">
                             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>

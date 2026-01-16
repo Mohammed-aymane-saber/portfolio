@@ -11,7 +11,7 @@ const Footer = () => {
                     className="flex flex-col md:flex-row items-center justify-between gap-4"
                 >
                     <p className="text-gray-400 text-sm font-mono">
-                        © 2026 Mohammed Aymane Saber. Built with React + Vite.
+                        © 2026 Mohammed Aymane Saber.
                     </p>
 
                     <div className="flex items-center gap-6">

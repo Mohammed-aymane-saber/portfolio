@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import {
     SiLaravel, SiNodedotjs, SiDotnet, SiReact, SiJavascript, SiAngular, SiVuedotjs,
     SiNextdotjs, SiTailwindcss, SiDocker, SiAmazonwebservices, SiGit,
-    SiLinux, SiMysql, SiPostgresql, SiMongodb ,SiGithub, SiPostman
+    SiLinux, SiMysql, SiPostgresql, SiMongodb ,SiGithub, SiPostman 
 } from 'react-icons/si';
 import { FaJava, FaWindows, FaCode } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
@@ -14,7 +14,7 @@ const Skills = () => {
         'Node.js': <SiNodedotjs />,
         'ASP.NET Core': <SiDotnet />,
         'React': <SiReact />,
-        'JavaScript (ES6+)': <SiJavascript />,
+        'JavaScript': <SiJavascript />,
         'Angular': <SiAngular />,
         'Vue': <SiVuedotjs />,
         'Next': <SiNextdotjs />,
@@ -40,7 +40,7 @@ const Skills = () => {
         },
         {
             title: 'Frontend',
-            skills: ['React', 'JavaScript (ES6+)', 'Angular', 'Vue', 'Next', 'State Management', 'API Integration', 'Responsive Design', 'Tailwind CSS']
+            skills: ['React', 'JavaScript', 'Angular', 'Vue', 'Next', 'State Management', 'API Integration', 'Responsive Design', 'Tailwind CSS']
         },
         {
             title: 'DevOps',
@@ -48,7 +48,7 @@ const Skills = () => {
         },
         {
             title: 'Database',
-            skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Database Design', 'SQL', 'Eloquent ORM']
+            skills: ['MySQL', 'PostgreSQL', 'MongoDB','SQL Server' ,'Database Design', 'Eloquent ORM']
         },
         {
             title: 'Tools & Systems',

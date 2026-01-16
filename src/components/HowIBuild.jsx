@@ -40,7 +40,7 @@ const HowIBuild = () => {
             items: [
                 'Containerize with Docker (multi-stage builds)',
                 'Set up CI/CD pipelines (GitHub Actions)',
-                'Deploy to cloud (Azure/other platforms)',
+                'Deploy to cloud (AWS/other platforms)',
                 'Configure environment variables properly',
                 'Monitor application health and logs'
             ]
