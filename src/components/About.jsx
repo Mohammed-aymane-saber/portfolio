@@ -73,20 +73,20 @@ const About = () => {
                                 <div className="space-y-4">
                                     <h3 className="text-2xl font-bold text-white">The Engineering Mindset</h3>
                                     <p className="text-gray-300 leading-relaxed text-lg">
-                                        I build <span className="text-primary-400 font-semibold underline decoration-primary-500/30 underline-offset-4">Full-stack & DevOps web applications</span> with a meticulous focus on clean architecture, scalability, and robust performance. My goal is to bridge the gap between complex backend logic and seamless user experiences.
+                                        I focus on building <span className="text-primary-400 font-semibold underline decoration-primary-500/30 underline-offset-4">full-stack applications</span> with a strong emphasis on clean architecture, scalability, and reliable performance. My objective is to effectively connect complex backend systems with intuitive and seamless user experiences.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="pl-14 space-y-4 text-gray-400 leading-relaxed border-l border-gray-800 ml-7">
                                 <p>
-                                    My approach combines <span className="text-white font-medium">modern backend frameworks</span> like Laravel, Java (Spring Boot), and ASP.NET Core with <span className="text-white font-medium">reactive frontends</span> using React, Vue, and Next.js.
+                                    My approach combines <span className="text-white font-medium">modern backend frameworks</span> such as Laravel, Java (Spring Boot), and ASP.NET Core with <span className="text-white font-medium">reactive frontends</span> built using React, Vue, and Next.js.
                                 </p>
                                 <p>
-                                    I am a strong advocate for <span className="text-primary-400 font-mono">everything-as-code</span>. From implementing RESTful APIs with advanced security patterns to containerizing entire environments with <span className="text-white font-medium">Docker</span>, I ensure consistency from local development to production.
+                                    I strongly value <span className="text-primary-400 font-mono">infrastructure-as-code</span> and automation. From designing secure RESTful APIs to containerizing complete application environments with <span className="text-white font-medium">Docker</span>, I aim to maintain consistency across development, testing, and production stages.
                                 </p>
                                 <p>
-                                    On the <span className="text-primary-400 font-semibold">DevOps</span> front, I master automated pipelines using <span className="text-white font-medium">GitHub Actions</span> and feel at home managing cloud infrastructures on <span className="text-white font-medium">AWS & Azure</span>.
+                                    On the <span className="text-primary-400 font-semibold">DevOps</span> side, I work with automated CI/CD pipelines using <span className="text-white font-medium">GitHub Actions</span> and have hands-on experience deploying and managing applications on cloud platforms such as <span className="text-white font-medium">AWS and Azure</span>.
                                 </p>
                             </div>
                         </motion.div>
