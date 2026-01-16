@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gray-950 text-gray-100 font-sans antialiased relative;
+    /* Engineering grid background */
+    background-image:
+      linear-gradient(to right, rgba(31, 41, 55, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(31, 41, 55, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-800 rounded-full hover:bg-primary-600 transition-colors duration-300;
+  }
+}
+
+@layer components {
+
+  /* Section styling */
+  .section {
+    @apply py-20 px-4 md:px-8;
+  }
+
+  .container {
+    @apply max-w-6xl mx-auto;
+  }
+
+  /* Typography */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-12 text-white;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-gray-400 mb-8;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-gray-900 border border-gray-800 rounded-lg p-6 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply border-primary-500 shadow-xl shadow-primary-500/20 -translate-y-1;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-300 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition-all duration-300 inline-flex items-center gap-2 border border-gray-700;
+  }
+
+  /* Code blocks */
+  .code-block {
+    @apply bg-gray-900 border border-gray-800 rounded-lg p-4 font-mono text-sm overflow-x-auto;
+  }
+
+  /* Skills */
+  .skill-category {
+    @apply mb-8;
+  }
+
+  .skill-tag {
+    @apply inline-block bg-gray-800 text-gray-300 px-3 py-1.5 rounded-md text-sm font-mono mr-2 mb-2 border border-gray-700 hover:border-primary-500 transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-600;
+  }
+
+  .glow {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+  }
+}
