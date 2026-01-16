@@ -169,11 +169,11 @@ const Projects = () => {
 
                             <motion.div
                                 layoutId={`project-${selectedProject.id}`}
-                                className="relative bg-gray-900 border border-gray-800 rounded-3xl w-full max-w-5xl max-h-[85vh] overflow-y-auto overflow-x-hidden shadow-2xl"
+                                className="relative bg-gray-900 border border-gray-800 rounded-3xl w-full max-w-5xl max-h-[90vh] md:max-h-[85vh] overflow-y-auto overflow-x-hidden shadow-2xl"
                             >
                                 <button
                                     onClick={() => setSelectedProject(null)}
-                                    className="absolute top-6 right-6 z-10 p-2 text-gray-400 hover:text-white bg-gray-800/50 rounded-full backdrop-blur-md transition-colors"
+                                    className="absolute top-4 right-4 md:top-6 md:right-6 z-20 p-2 text-gray-400 hover:text-white bg-gray-800/80 md:bg-gray-800/50 rounded-full backdrop-blur-md transition-colors border border-white/5"
                                 >
                                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -182,8 +182,8 @@ const Projects = () => {
 
                                 <div className="flex flex-col">
                                     {/* Modal Image Section - Full Width Browser Mockup */}
-                                    <div className="p-6 lg:p-10 bg-gray-950/30 border-b border-gray-800/50">
-                                        <div className="relative group/browser max-w-[95%] mx-auto">
+                                    <div className="p-4 md:p-10 bg-gray-950/30 border-b border-gray-800/50">
+                                        <div className="relative group/browser w-full md:max-w-[95%] mx-auto">
                                             {/* Browser Header */}
                                             <div className="bg-gray-800/80 backdrop-blur-md rounded-t-xl py-2.5 px-4 border-t border-x border-gray-700/50 flex items-center gap-2">
                                                 <div className="flex gap-1.5">
@@ -192,9 +192,9 @@ const Projects = () => {
                                                     <div className="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
                                                 </div>
                                                 <div className="mx-auto flex items-center gap-2">
-                                                    <div className="w-[120px] md:w-[220px] h-4 md:h-5 bg-gray-900/50 rounded-full flex items-center justify-center px-3 border border-gray-700/30">
-                                                        <div className="w-2 h-2 rounded-full bg-primary-500/20 mr-2"></div>
-                                                        <span className="text-[10px] text-gray-500 font-mono truncate">{selectedProject.title.toLowerCase().replace(/\s+/g, '-')}.dev</span>
+                                                    <div className="w-[100px] md:w-[220px] h-4 md:h-5 bg-gray-900/50 rounded-full flex items-center justify-center px-2 md:px-3 border border-gray-700/30">
+                                                        <div className="w-1.5 h-1.5 rounded-full bg-primary-500/20 mr-1.5 md:mr-2"></div>
+                                                        <span className="text-[9px] md:text-[10px] text-gray-500 font-mono truncate">{selectedProject.title.toLowerCase().replace(/\s+/g, '-')}.dev</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -211,34 +211,36 @@ const Projects = () => {
                                     </div>
 
                                     {/* Modal Content - Two Column Layout */}
-                                    <div className="p-8 lg:p-12">
+                                    <div className="p-6 md:p-12">
                                         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10">
                                             {/* Main Info (Left) */}
                                             <div className="lg:col-span-12">
-                                                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-                                                    <div>
-                                                        <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">
-                                                            {selectedProject.title}
-                                                        </h3>
-                                                        <p className="text-primary-400 font-mono text-xs uppercase tracking-widest">TECHNICAL PROJECT FILE</p>
+                                                <div className="flex flex-col gap-6 mb-8">
+                                                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                                                        <div>
+                                                            <h3 className="text-2xl md:text-4xl font-bold text-white mb-2 leading-tight">
+                                                                {selectedProject.title}
+                                                            </h3>
+                                                            <p className="text-primary-400 font-mono text-[10px] md:text-xs uppercase tracking-widest">TECHNICAL PROJECT FILE</p>
+                                                        </div>
+                                                        <div className="flex gap-3">
+                                                            <a
+                                                                href={selectedProject.github}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="flex-1 md:flex-none inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white rounded-xl transition-all font-bold text-sm border border-gray-700"
+                                                            >
+                                                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                                                </svg>
+                                                                REPO GITHUB
+                                                            </a>
+                                                        </div>
                                                     </div>
-                                                    <div className="flex gap-3">
-                                                        <a
-                                                            href={selectedProject.github}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="inline-flex items-center gap-2 px-6 py-2.5 bg-gray-800 hover:bg-gray-700 text-white rounded-xl transition-all font-bold text-sm border border-gray-700"
-                                                        >
-                                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                                            </svg>
-                                                            REPO GITHUB
-                                                        </a>
-                                                    </div>
+                                                    <p className="text-gray-300 leading-relaxed font-light text-base md:text-lg max-w-3xl">
+                                                        {selectedProject.description}
+                                                    </p>
                                                 </div>
-                                                <p className="text-gray-300 leading-relaxed font-light text-lg mb-8 max-w-3xl">
-                                                    {selectedProject.description}
-                                                </p>
                                             </div>
 
                                             {/* Details Section (Two Columns) */}
