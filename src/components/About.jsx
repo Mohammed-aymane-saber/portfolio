@@ -55,10 +55,13 @@ const About = () => {
                                 I build <span className="text-primary-400 font-semibold">full-stack web applications</span> with focus on clean architecture, scalability, and performance.
                             </p>
                             <p className="text-gray-300">
-                                My approach combines <span className="text-primary-400 font-semibold">modern backend frameworks</span> (Laravel, Java , Node.js , ASP.NET Core) with <span className="text-primary-400 font-semibold">dynamic frontends</span> (React, Angular, Vue, Next), containerized with Docker for consistent deployments.
+                                My approach combines <span className="text-primary-400 font-semibold">modern backend frameworks</span> (Laravel, Java, Node.js, ASP.NET Core) with <span className="text-primary-400 font-semibold">dynamic frontends</span> (React, Angular, Vue, Next), fully containerized with <span className="text-primary-400 font-semibold">Docker & Docker Compose</span> for consistent development and production environments.
                             </p>
                             <p className="text-gray-300">
                                 I implement <span className="text-primary-400 font-semibold">REST APIs</span>, handle authentication/authorization, and follow software engineering best practices including design patterns and clean code principles.
+                            </p>
+                            <p className="text-gray-300">
+                                On the <span className="text-primary-400 font-semibold">DevOps</span> side, I automate workflows using <span className="text-primary-400 font-semibold">GitHub Actions</span> (CI/CD), manage infrastructure on <span className="text-primary-400 font-semibold">AWS & Azure</span>, and have a solid command of <span className="text-primary-400 font-semibold">Linux (CLI)</span> and <span className="text-primary-400 font-semibold">Git</span> for version control.
                             </p>
                         </div>
                     </motion.div>
