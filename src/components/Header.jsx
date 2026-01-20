@@ -35,6 +35,10 @@ const Header = () => {
         { key: 'contact', label: t('nav.contact') }
     ];
 
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
         <motion.header
             initial={{ y: -100 }}
@@ -48,7 +52,8 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="flex items-center gap-2 text-xl font-bold font-mono"
+                        onClick={scrollToTop}
+                        className="flex items-center gap-2 text-xl font-bold font-mono cursor-pointer"
                     >
                         <img src="/logo.png" alt="Logo" className="w-8 h-8 object-contain rounded-md" />
                     </motion.div>
