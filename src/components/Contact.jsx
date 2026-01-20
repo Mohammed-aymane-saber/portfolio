@@ -133,7 +133,7 @@ const Contact = () => {
                                         name="name"
                                         required
                                         className="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
-                                        placeholder={isEn ? 'John Doe' : 'Votre nom'}
+                                        placeholder={isEn ? 'Your name' : 'Votre nom'}
                                     />
                                 </div>
                                 <div>
@@ -143,9 +143,9 @@ const Contact = () => {
                                         name="email"
                                         required
                                         className="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
-                                        placeholder="john@example.com"
+                                        placeholder={isEn ? 'Your email' : 'Votre email'}
                                     />
-                                </div>
+                                </div>  
                                 <div>
                                     <label className="block text-sm font-medium text-gray-400 mb-2 font-mono">MESSAGE</label>
                                     <textarea
@@ -153,7 +153,7 @@ const Contact = () => {
                                         rows="4"
                                         required
                                         className="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
-                                        placeholder={isEn ? 'How can I help you?' : 'Comment puis-je vous aider ?'}
+                                        placeholder={isEn ? 'Let\'s Work Together' : 'Travailons ensemble'}
                                     />
                                 </div>
                                 <motion.button
