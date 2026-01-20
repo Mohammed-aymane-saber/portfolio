@@ -51,8 +51,8 @@ const Contact = () => {
         {
             icon: <HiOutlinePhone className="text-2xl" />,
             label: isEn ? "Phone" : "Téléphone",
-            value: "+212 600-000000",
-            href: "tel:+212600000000"
+            value: "+212 632-249348",
+            href: "tel:+212632249348"
         },
         {
             icon: <HiOutlineMapPin className="text-2xl" />,
