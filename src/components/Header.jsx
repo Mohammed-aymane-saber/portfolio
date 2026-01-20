@@ -51,7 +51,6 @@ const Header = () => {
                         className="flex items-center gap-2 text-xl font-bold font-mono"
                     >
                         <img src="/logo.png" alt="Logo" className="w-8 h-8 object-contain rounded-md" />
-                        <span className="text-gradient">&lt;/MS&gt;</span>
                     </motion.div>
 
                     <motion.ul
