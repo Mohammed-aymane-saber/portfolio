@@ -1,22 +1,19 @@
 import { motion } from 'framer-motion';
 import { HiOutlineBriefcase, HiOutlineCalendar, HiOutlineMapPin, HiOutlineCheckCircle } from 'react-icons/hi2';
+import { useTranslation } from 'react-i18next';
 
 const Experience = () => {
+    const { t } = useTranslation();
     const experiences = [
         {
             id: 1,
-            role: "Stagiaire Développeur Full-Stack",
+            role: t('experience.role'),
             company: "Procom Tech",
-            location: "Agadir, Maroc",
-            period: "Juillet 2025 — Août 2025",
-            description: "Conception et développement d'une solution ERP mobile (SystemePDA) pour la gestion commerciale et le suivi des stocks en temps réel.",
-            achievements: [
-                "Mise en place d'une architecture Mono-repo unifiant le Backend (Laravel 12) et le Mobile (React Native).",
-                "Développement d'une API REST complexe avec authentification sécurisée via Laravel Sanctum.",
-                "Optimisation de la synchronisation des données de stock entre les terminaux PDA et le serveur central.",
-                "Configuration de l'environnement de développement conteneurisé avec Docker."
-            ],
-            tech: ["Laravel 12", "React Native", "Expo", "Sanctum", "MySQL"]
+            location: t('experience.location'),
+            period: t('experience.period'),
+            description: t('experience.desc'),
+            achievements: t('experience.achievements', { returnObjects: true }),
+            tech: ["Laravel 12", "React Native", "Expo", "Docker", "Sanctum", "MySQL"]
         }
     ];
 
@@ -29,11 +26,11 @@ const Experience = () => {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <h2 className="section-title mb-4">Experience</h2>
+                    <h2 className="section-title mb-4">{t('experience.title')}</h2>
                     <div className="flex items-center gap-3">
                         <div className="h-px w-12 bg-primary-500/50" />
                         <p className="text-gray-400 font-mono text-sm uppercase tracking-widest">
-                            My Professional Journey
+                            {t('experience.subtitle')}
                         </p>
                     </div>
                 </motion.div>

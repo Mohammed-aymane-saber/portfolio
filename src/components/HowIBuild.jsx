@@ -1,48 +1,75 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const HowIBuild = () => {
+    const { t, i18n } = useTranslation();
+    const isEn = i18n.language.startsWith('en');
+
     const process = [
         {
             phase: '01',
-            title: 'Planning & Architecture',
-            items: [
+            title: isEn ? 'Planning & Architecture' : 'Planification & Architecture',
+            items: isEn ? [
                 'Define clear requirements and user stories',
                 'Design database schema and relationships',
                 'Create UML diagrams (Use Case, Class, Sequence)',
                 'Plan API endpoints and data flow',
                 'Choose appropriate design patterns'
+            ] : [
+                'Définir des exigences et user stories claires',
+                'Concevoir le schéma de la base de données',
+                'Créer des diagrammes UML (Cas d\'utilisation, Classe, Séquence)',
+                'Planifier les services API et le flux de données',
+                'Choisir les design patterns appropriés'
             ]
         },
         {
             phase: '02',
-            title: 'Development',
-            items: [
+            title: isEn ? 'Development' : 'Développement',
+            items: isEn ? [
                 'Backend first: Build REST API with proper validation',
                 'Follow MVC/layered architecture',
                 'Implement authentication and authorization',
                 'Write clean, maintainable code following SOLID principles',
                 'Frontend: Integrate API with React, manage state efficiently'
+            ] : [
+                'Backend d\'abord : API REST avec validation stricte',
+                'Respect de l\'architecture MVC / en couches',
+                'Implémenter l\'authentification et l\'autorisation',
+                'Code propre et maintenable (principes SOLID)',
+                'Frontend : Intégration API avec React et gestion d\'état'
             ]
         },
         {
             phase: '03',
-            title: 'Version Control & Collaboration',
-            items: [
+            title: isEn ? 'Version Control & Collaboration' : 'Contrôle de Version & Collaboration',
+            items: isEn ? [
                 'Git workflow: feature branches, meaningful commits',
                 'Code reviews and pull requests',
                 'Follow conventional commit messages',
                 'Maintain clean git history'
+            ] : [
+                'Workflow Git : branches de fonctionnalités, commits explicites',
+                'Revues de code et pull requests',
+                'Respect des messages de commit conventionnels',
+                'Maintien d\'un historique Git propre'
             ]
         },
         {
             phase: '04',
-            title: 'Deployment & DevOps',
-            items: [
+            title: isEn ? 'Deployment & DevOps' : 'Déploiement & DevOps',
+            items: isEn ? [
                 'Containerize with Docker (multi-stage builds)',
                 'Set up CI/CD pipelines (GitHub Actions)',
                 'Deploy to cloud (AWS/other platforms)',
                 'Configure environment variables properly',
                 'Monitor application health and logs'
+            ] : [
+                'Conteneurisation Docker (builds multi-étapes)',
+                'Mise en place de pipelines CI/CD (GitHub Actions)',
+                'Déploiement Cloud (AWS / autres plateformes)',
+                'Configuration stricte des variables d\'environnement',
+                'Monitoring de la santé de l\'application et des logs'
             ]
         }
     ];
@@ -56,7 +83,7 @@ const HowIBuild = () => {
                     viewport={{ once: true }}
                     className="section-title"
                 >
-                    How I Build Things
+                    {t('howIBuild.title')}
                 </motion.h2>
 
                 <motion.p
@@ -65,7 +92,7 @@ const HowIBuild = () => {
                     viewport={{ once: true }}
                     className="text-gray-400 max-w-3xl mb-12"
                 >
-                    My approach to software development emphasizes clean architecture, best practices, and sustainable code. Here's my typical workflow:
+                    {t('howIBuild.subtitle')}
                 </motion.p>
 
                 <div className="grid md:grid-cols-2 gap-8">
@@ -113,20 +140,20 @@ const HowIBuild = () => {
                             <svg className="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                             </svg>
-                            Key Principles
+                            {t('howIBuild.principles')}
                         </h3>
                         <div className="grid md:grid-cols-3 gap-4">
                             <div className="space-y-1">
-                                <p className="text-primary-400 font-semibold text-sm">Clean Code</p>
-                                <p className="text-gray-400 text-sm">Readable, maintainable, and well-documented code that other developers can understand.</p>
+                                <p className="text-primary-400 font-semibold text-sm">{t('howIBuild.cleanCode')}</p>
+                                <p className="text-gray-400 text-sm">{t('howIBuild.cleanCodeDesc')}</p>
                             </div>
                             <div className="space-y-1">
-                                <p className="text-primary-400 font-semibold text-sm">Scalability</p>
-                                <p className="text-gray-400 text-sm">Design systems that can grow and adapt to changing requirements.</p>
+                                <p className="text-primary-400 font-semibold text-sm">{t('howIBuild.scalability')}</p>
+                                <p className="text-gray-400 text-sm">{t('howIBuild.scalabilityDesc')}</p>
                             </div>
                             <div className="space-y-1">
-                                <p className="text-primary-400 font-semibold text-sm">Security First</p>
-                                <p className="text-gray-400 text-sm">Implement proper authentication, validation, and data protection from the start.</p>
+                                <p className="text-primary-400 font-semibold text-sm">{t('howIBuild.security')}</p>
+                                <p className="text-gray-400 text-sm">{t('howIBuild.securityDesc')}</p>
                             </div>
                         </div>
                     </div>
@@ -165,9 +192,9 @@ const HowIBuild = () => {
                         className="md:col-span-12 lg:col-span-5 p-6 bg-gray-950/50 border border-gray-800/50 rounded-3xl flex items-center"
                     >
                         <p className="text-gray-400 text-sm font-mono leading-relaxed">
-                            <span className="text-primary-500">~$</span> Stack choices follow requirements.<br />
-                            <span className="text-primary-500">~$</span> Proven tech & clean history.<br />
-                            <span className="text-primary-500">~$</span> Scale via automation.
+                            <span className="text-primary-500">~$</span> {isEn ? 'Stack choices follow requirements.' : 'Choix tech adaptés aux besoins.'}<br />
+                            <span className="text-primary-500">~$</span> {isEn ? 'Proven tech & clean history.' : 'Propre historique & tech éprouvées.'}<br />
+                            <span className="text-primary-500">~$</span> {isEn ? 'Scale via automation.' : 'Scalabilité via l\'automatisation.'}
                         </p>
                     </motion.div>
                 </div>

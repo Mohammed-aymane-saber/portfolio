@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+    const { t } = useTranslation();
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
         element?.scrollIntoView({ behavior: 'smooth' });
@@ -23,8 +25,8 @@ const Hero = () => {
                             transition={{ delay: 0.2, duration: 0.8 }}
                             className="text-5xl md:text-7xl font-bold mb-6"
                         >
-                            Mohammed Aymane{' '}
-                            <span className="text-gradient">Saber</span>
+                            {t('hero.title').split(' ')[0]}{' '}
+                            <span className="text-gradient">{t('hero.title').split(' ').slice(1).join(' ')}</span>
                         </motion.h1>
 
                         <motion.p
@@ -33,7 +35,7 @@ const Hero = () => {
                             transition={{ delay: 0.4, duration: 0.8 }}
                             className="text-2xl md:text-3xl text-gray-400 mb-4 font-medium"
                         >
-                            Software Engineering Student
+                            {t('hero.subtitle')}
                         </motion.p>
 
                         <motion.p
@@ -42,7 +44,7 @@ const Hero = () => {
                             transition={{ delay: 0.5, duration: 0.8 }}
                             className="text-xl text-gray-500 mb-12 font-mono"
                         >
-                            Full-Stack Development & DevOps
+                            {t('hero.desc')}
                         </motion.p>
 
                         <motion.div
@@ -57,7 +59,7 @@ const Hero = () => {
                                 onClick={() => scrollToSection('projects')}
                                 className="btn-primary"
                             >
-                                <span>View Projects</span>
+                                <span>{t('hero.cta')}</span>
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>

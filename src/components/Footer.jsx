@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+    const { i18n } = useTranslation();
+    const isEn = i18n.language.startsWith('en');
     return (
         <footer className="bg-gray-900 border-t border-gray-800 py-8">
             <div className="container mx-auto px-4 md:px-8">
@@ -10,8 +13,8 @@ const Footer = () => {
                     viewport={{ once: true }}
                     className="flex flex-col md:flex-row items-center justify-between gap-4"
                 >
-                    <p className="text-gray-400 text-sm font-mono">
-                        © 2026 Mohammed Aymane Saber.
+                    <p className="text-gray-400 text-sm font-mono tracking-tighter">
+                        © 2026 Mohammed Aymane Saber. {isEn ? "All rights reserved." : "Tous droits réservés."}
                     </p>
 
                     <div className="flex items-center gap-6">

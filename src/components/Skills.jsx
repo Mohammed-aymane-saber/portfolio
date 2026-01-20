@@ -2,12 +2,16 @@ import { motion } from 'framer-motion';
 import {
     SiLaravel, SiNodedotjs, SiDotnet, SiReact, SiJavascript, SiAngular, SiVuedotjs,
     SiNextdotjs, SiTailwindcss, SiDocker, SiAmazonwebservices, SiGit,
-    SiLinux, SiMysql, SiPostgresql, SiMongodb ,SiGithub, SiPostman 
+    SiLinux, SiMysql, SiPostgresql, SiMongodb, SiGithub, SiPostman
 } from 'react-icons/si';
 import { FaJava, FaWindows, FaCode } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
+import { useTranslation } from 'react-i18next';
 
 const Skills = () => {
+    const { t, i18n } = useTranslation();
+    const isEn = i18n.language.startsWith('en');
+
     const iconMap = {
         'Laravel': <SiLaravel />,
         'Java': <FaJava />,
@@ -35,23 +39,23 @@ const Skills = () => {
 
     const skillCategories = [
         {
-            title: 'Backend',
+            title: isEn ? 'Backend' : 'Développement Backend',
             skills: ['Laravel', 'Java', 'Node.js', 'ASP.NET Core', 'REST API', 'Authentication', 'Design Patterns', 'MVC Architecture', 'OOP']
         },
         {
-            title: 'Frontend',
+            title: isEn ? 'Frontend' : 'Développement Frontend',
             skills: ['React', 'JavaScript', 'Angular', 'Vue', 'Next', 'State Management', 'API Integration', 'Responsive Design', 'Tailwind CSS']
         },
         {
-            title: 'DevOps',
+            title: isEn ? 'DevOps' : 'Opérations de Développement',
             skills: ['Docker', 'AWS', 'CI/CD', 'Azure', 'Git', 'Linux', 'Shell Scripting']
         },
         {
-            title: 'Database',
-            skills: ['MySQL', 'PostgreSQL', 'MongoDB','SQL Server' ,'Database Design', 'Eloquent ORM']
+            title: isEn ? 'Database' : 'Base de données',
+            skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL Server', 'Database Design', 'Eloquent ORM']
         },
         {
-            title: 'Tools & Systems',
+            title: isEn ? 'Tools & Systems' : 'Outils & Systèmes',
             skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'Linux', 'Windows', 'Docker']
         }
     ];
@@ -80,7 +84,7 @@ const Skills = () => {
                     viewport={{ once: true }}
                     className="section-title"
                 >
-                    Skills
+                    {t('skills.title')}
                 </motion.h2>
 
                 <motion.div

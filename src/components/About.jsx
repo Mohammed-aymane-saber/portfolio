@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { HiOutlineAcademicCap, HiOutlineLightBulb, HiOutlineRocketLaunch, HiOutlineCommandLine } from 'react-icons/hi2';
+import { useTranslation, Trans } from 'react-i18next';
 
 const About = () => {
+    const { t } = useTranslation();
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -47,11 +49,11 @@ const About = () => {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <h2 className="section-title mb-4">About Me</h2>
+                    <h2 className="section-title mb-4">{t('about.title')}</h2>
                     <div className="flex items-center gap-3">
                         <div className="h-px w-12 bg-primary-500/50" />
                         <p className="text-gray-400 font-mono text-sm uppercase tracking-widest">
-                            Software Engineer & DevOps Enthusiast
+                            {t('about.subtitle')}
                         </p>
                     </div>
                 </motion.div>
@@ -71,22 +73,30 @@ const About = () => {
                                     <HiOutlineCommandLine className="text-2xl" />
                                 </div>
                                 <div className="space-y-4">
-                                    <h3 className="text-2xl font-bold text-white">The Engineering Mindset</h3>
+                                    <h3 className="text-2xl font-bold text-white">{t('about.mindset')}</h3>
                                     <p className="text-gray-300 leading-relaxed text-lg">
-                                        I focus on building <span className="text-primary-400 font-semibold underline decoration-primary-500/30 underline-offset-4">Full-stack applications</span> with a strong emphasis on clean architecture, scalability, and reliable performance. My objective is to effectively connect complex backend systems with intuitive and seamless user experiences.
+                                        <Trans i18nKey="about.p1">
+                                            I focus on building <span className="text-primary-400 font-semibold underline decoration-primary-500/30 underline-offset-4">Full-stack applications</span> with a strong emphasis on clean architecture, scalability, and reliable performance. My objective is to effectively connect complex backend systems with intuitive and seamless user experiences.
+                                        </Trans>
                                     </p>
                                 </div>
                             </div>
 
                             <div className="pl-14 space-y-4 text-gray-400 leading-relaxed border-l border-gray-800 ml-7">
                                 <p>
-                                    My approach combines <span className="text-white font-medium">modern backend frameworks</span> such as Laravel, Java (Spring Boot), and ASP.NET Core with <span className="text-white font-medium">reactive frontends</span> built using React, Vue, and Next.js.
+                                    <Trans i18nKey="about.p2">
+                                        My approach combines <span className="text-white font-medium">modern backend frameworks</span> such as Laravel  and ASP.NET Core with <span className="text-white font-medium">reactive frontends</span> built using React, Vue, and Next.js.
+                                    </Trans>
                                 </p>
                                 <p>
-                                    I strongly value <span className="text-primary-400 font-mono">infrastructure-as-code</span> and automation. From designing secure RESTful APIs to containerizing complete application environments with <span className="text-white font-medium">Docker</span>, I aim to maintain consistency across development, testing, and production stages.
+                                    <Trans i18nKey="about.p3">
+                                        I strongly value <span className="text-primary-400 font-mono">infrastructure-as-code</span> and automation. From designing secure RESTful APIs to containerizing complete application environments with <span className="text-white font-medium">Docker</span>, I aim to maintain consistency across development, testing, and production stages.
+                                    </Trans>
                                 </p>
                                 <p>
-                                    On the <span className="text-primary-400 font-semibold">DevOps</span> side, I work with automated CI/CD pipelines using <span className="text-white font-medium">GitHub Actions</span> and have hands-on experience deploying and managing applications on cloud platforms such as <span className="text-white font-medium">AWS and Azure</span>.
+                                    <Trans i18nKey="about.p4">
+                                        On the <span className="text-primary-400 font-semibold">DevOps</span> side, I work with automated CI/CD pipelines using <span className="text-white font-medium">GitHub Actions</span> and have hands-on experience deploying and managing applications on cloud platforms such as <span className="text-white font-medium">AWS and Azure</span>.
+                                    </Trans>
                                 </p>
                             </div>
                         </motion.div>
@@ -107,7 +117,7 @@ const About = () => {
                             <div className="relative z-10">
                                 <div className="flex items-center gap-3 text-primary-400 mb-6">
                                     <HiOutlineAcademicCap className="text-2xl" />
-                                    <span className="text-xs font-mono font-bold uppercase tracking-[0.2em]">Academic Path</span>
+                                    <span className="text-xs font-mono font-bold uppercase tracking-[0.2em]">{t('about.path')}</span>
                                 </div>
                                 <h4 className="text-xl font-bold text-white mb-2">École Nationale des Sciences Appliquées</h4>
                                 <p className="text-primary-400 font-medium mb-1">Génie Informatique (Full-stack & DevOps)</p>
@@ -128,7 +138,7 @@ const About = () => {
                             <div className="relative z-10">
                                 <div className="flex items-center gap-3 text-yellow-400 mb-6">
                                     <HiOutlineLightBulb className="text-2xl" />
-                                    <span className="text-xs font-mono font-bold uppercase tracking-[0.2em]">Current Focus</span>
+                                    <span className="text-xs font-mono font-bold uppercase tracking-[0.2em]">{t('about.focus')}</span>
                                 </div>
                                 <p className="text-gray-300 leading-relaxed mb-6">
                                     I am currently deepening my expertise in <span className="text-white font-semibold">Cloud Computing</span> and <span className="text-white font-semibold">DevOps</span>.
@@ -154,8 +164,8 @@ const About = () => {
                                     <div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping opacity-75"></div>
                                 </div>
                                 <div>
-                                    <p className="text-white font-bold text-sm">Open for Opportunities</p>
-                                    <p className="text-gray-500 text-xs">Ready for Internship / Junior Roles</p>
+                                    <p className="text-white font-bold text-sm">{t('about.availability')}</p>
+                                    <p className="text-gray-500 text-xs">{t('about.availabilityDesc')}</p>
                                 </div>
                             </div>
                             <HiOutlineRocketLaunch className="text-2xl text-primary-500/50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

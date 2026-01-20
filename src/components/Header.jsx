@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+    const { t, i18n } = useTranslation();
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isLangOpen, setIsLangOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,6 +21,20 @@ const Header = () => {
         element?.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const toggleLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+        setIsLangOpen(false);
+    };
+
+    const navItems = [
+        { key: 'about', label: t('nav.about') },
+        { key: 'experience', label: t('nav.experience') },
+        { key: 'skills', label: t('nav.skills') },
+        { key: 'projects', label: t('nav.projects') },
+        { key: 'how-i-build', label: t('nav.howIBuild') },
+        { key: 'contact', label: t('nav.contact') }
+    ];
+
     return (
         <motion.header
             initial={{ y: -100 }}
@@ -31,8 +48,9 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl font-bold font-mono"
+                        className="flex items-center gap-2 text-xl font-bold font-mono"
                     >
+                        <img src="/logo.png" alt="Logo" className="w-8 h-8 object-contain rounded-md" />
                         <span className="text-gradient">&lt;/MS&gt;</span>
                     </motion.div>
 
@@ -42,17 +60,17 @@ const Header = () => {
                         transition={{ delay: 0.3 }}
                         className="hidden md:flex items-center gap-8"
                     >
-                        {['About', 'Experience', 'Skills', 'Projects', 'How I Build', 'Contact'].map((item, index) => (
-                            <li key={item}>
+                        {navItems.map((item, index) => (
+                            <li key={item.key}>
                                 <motion.button
                                     initial={{ opacity: 0, y: -20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 * index }}
                                     whileHover={{ y: -2, color: '#0ea5e9' }}
-                                    onClick={() => scrollToSection(item.toLowerCase().replace(/ /g, '-'))}
-                                    className="text-gray-300 hover:text-primary-400 transition-colors duration-300 font-medium relative"
+                                    onClick={() => scrollToSection(item.key)}
+                                    className="text-gray-300 hover:text-primary-400 transition-colors duration-300 font-medium relative text-sm"
                                 >
-                                    {item}
+                                    {item.label}
                                 </motion.button>
                             </li>
                         ))}
@@ -62,8 +80,44 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
-                        className="flex items-center gap-4"
+                        className="flex items-center gap-6"
                     >
+                        {/* Language Switcher */}
+                        <div className="relative">
+                            <button
+                                onClick={() => setIsLangOpen(!isLangOpen)}
+                                className="flex items-center gap-2 text-gray-300 hover:text-primary-400 font-bold font-mono text-sm transition-colors border border-gray-800 px-3 py-1.5 rounded-lg bg-gray-900/50"
+                            >
+                                <span className="uppercase">{i18n.language.slice(0, 2)}</span>
+                                <svg className={`w-4 h-4 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+
+                            <AnimatePresence>
+                                {isLangOpen && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        className="absolute right-0 mt-2 w-24 bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-2xl z-50 overflow-y-hidden"
+                                    >
+                                        <button
+                                            onClick={() => toggleLanguage('en')}
+                                            className={`w-full text-left px-4 py-2.5 text-sm hover:bg-gray-800 transition-colors ${i18n.language.startsWith('en') ? 'text-primary-400' : 'text-gray-400'}`}
+                                        >
+                                            English
+                                        </button>
+                                        <button
+                                            onClick={() => toggleLanguage('fr')}
+                                            className={`w-full text-left px-4 py-2.5 text-sm hover:bg-gray-800 transition-colors ${i18n.language.startsWith('fr') ? 'text-primary-400' : 'text-gray-400'}`}
+                                        >
+                                            Français
+                                        </button>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
                         <a
                             href="https://github.com/Mohammed-aymane-saber"
                             target="_blank"
