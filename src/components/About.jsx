@@ -73,7 +73,7 @@ const About = () => {
                                 <div className="space-y-4">
                                     <h3 className="text-2xl font-bold text-white">The Engineering Mindset</h3>
                                     <p className="text-gray-300 leading-relaxed text-lg">
-                                        I focus on building <span className="text-primary-400 font-semibold underline decoration-primary-500/30 underline-offset-4">full-stack applications</span> with a strong emphasis on clean architecture, scalability, and reliable performance. My objective is to effectively connect complex backend systems with intuitive and seamless user experiences.
+                                        I focus on building <span className="text-primary-400 font-semibold underline decoration-primary-500/30 underline-offset-4">Full-stack applications</span> with a strong emphasis on clean architecture, scalability, and reliable performance. My objective is to effectively connect complex backend systems with intuitive and seamless user experiences.
                                     </p>
                                 </div>
                             </div>

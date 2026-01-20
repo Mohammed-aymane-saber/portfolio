@@ -42,7 +42,7 @@ const Header = () => {
                         transition={{ delay: 0.3 }}
                         className="hidden md:flex items-center gap-8"
                     >
-                        {['About', 'Skills', 'Projects', 'How I Build', 'Contact'].map((item, index) => (
+                        {['About', 'Experience', 'Skills', 'Projects', 'How I Build', 'Contact'].map((item, index) => (
                             <li key={item}>
                                 <motion.button
                                     initial={{ opacity: 0, y: -20 }}

@@ -132,22 +132,45 @@ const HowIBuild = () => {
                     </div>
                 </motion.div>
 
-                {/* Tech stack preference */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.6 }}
-                    className="mt-8 p-6 bg-gray-950 border border-gray-800 rounded-lg"
-                >
-                    <p className="text-gray-400 text-sm font-mono">
-                        <span className="text-primary-500">~$</span> Tech stack choices depend on project requirements, not trends.
-                        <br />
-                        <span className="text-primary-500">~$</span> Prefer proven technologies with strong community support.
-                        <br />
-                        <span className="text-primary-500">~$</span> Always optimize for maintainability and team collaboration.
-                    </p>
-                </motion.div>
+                {/* Tech stack preference & Quote */}
+                <div className="grid md:grid-cols-12 gap-8 mt-8">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.6 }}
+                        className="md:col-span-12 lg:col-span-7 p-8 bg-gray-950 border border-gray-800 rounded-3xl relative overflow-hidden group"
+                    >
+                        <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <svg className="w-24 h-24 text-primary-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V4C14.017 3.44772 14.4647 3 15.017 3H21.017C21.5693 3 22.017 3.44772 22.017 4V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM3.017 21L3.017 18C3.017 16.8954 3.91243 16 5.017 16H8.017C8.56928 16 9.017 15.5523 9.017 15V9C9.017 8.44772 8.56928 8 8.017 8H5.017C3.91243 8 3.017 7.10457 3.017 6V4C3.017 3.44772 3.46472 3 4.017 3H10.017C10.5693 3 11.017 3.44772 11.017 4V15C11.017 18.3137 8.33071 21 5.017 21H3.017Z" />
+                            </svg>
+                        </div>
+                        <div className="relative z-10 flex flex-col h-full justify-center">
+                            <p className="text-2xl md:text-3xl text-white font-medium italic mb-4 leading-tight">
+                                "If it hurts, do it more often."
+                            </p>
+                            <div className="flex items-center gap-4">
+                                <div className="h-px w-8 bg-primary-500" />
+                                <span className="text-primary-400 font-mono text-sm font-bold tracking-widest uppercase">Jez Humble</span>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.7 }}
+                        className="md:col-span-12 lg:col-span-5 p-6 bg-gray-950/50 border border-gray-800/50 rounded-3xl flex items-center"
+                    >
+                        <p className="text-gray-400 text-sm font-mono leading-relaxed">
+                            <span className="text-primary-500">~$</span> Stack choices follow requirements.<br />
+                            <span className="text-primary-500">~$</span> Proven tech & clean history.<br />
+                            <span className="text-primary-500">~$</span> Scale via automation.
+                        </p>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
