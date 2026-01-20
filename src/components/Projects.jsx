@@ -54,20 +54,21 @@ const Projects = () => {
 
         {
             id: 3,
-            title: 'DevOps CI/CD Pipeline',
-            shortDesc: 'Pipeline automatisé avec Docker et GitHub Actions.',
-            description: 'Un pipeline de déploiement automatisé utilisant Docker, GitHub Actions, et Azure pour rationaliser le développement.',
-            problem: 'Automatiser le flux de travail (testing, build, déploiement) pour réduire les erreurs et accélérer les mises à jour.',
-            stack: ['Docker', 'GitHub Actions', 'Azure', 'Nginx', 'Shell Scripts'],
+            title: 'Enterprise CI/CD & Smart Queue System',
+            shortDesc: 'Infrastructure DevOps automatisée avec pipeline CI/CD et gestion d\'état complexe.',
+            description: 'Une plateforme de gestion de file d\'attente intelligement orchestrée, mettant l\'accent sur une architecture robuste et un déploiement automatisé haute performance.',
+            problem: 'Nécessité d\'éliminer l\'asymétrie d\'information dans les environnements à fort trafic via une infrastructure scalable et un déploiement continu sans erreur.',
+            stack: ['Docker', 'GitHub Actions', 'AWS EC2', 'Laravel', 'React', 'Nginx'],
             architecture: [
-                'Containerization : Multi-stage Docker builds pour des images légères',
-                'CI/CD : Workflows GitHub Actions pour les tests et déploiements',
-                'Deployment : Déploiement automatisé sur Azure Cloud',
-                'Infrastructure : Configuration Nginx et scripts Shell pour la maintenance'
+                'Advanced CI/CD : Pipeline automatisé (GitHub Actions) gérant les tests, la conteneurisation et le déploiement sur AWS EC2 avec gestion de branches.',
+                'Docker Orchestration : Architecture multi-conteneurs isolée (App, Web, DB) configurée avec des Health Checks pour une haute disponibilité.',
+                'State Machine Logic : Moteur de gestion d\'états robuste (BOOKED → WAITING → DONE) pour garantir l\'intégrité des flux de données.',
+                'Smart Algorithms : Implémentation de calculs d\'EWT (Estimated Wait Time) en temps réel basés sur la vélocité des guichets actifs.'
             ],
-            github: 'https://github.com/Mohammed-aymane-saber/devops-pipeline',
+            github: 'https://github.com/Mohammed-aymane-saber/CI-CD_Pipeline',
+            live: 'https://votre-demo.com',
+            highlights: ['Automated AWS Deployment', 'Docker Health Monitoring', 'Real-time Algorithmics', 'DevOps Infrastructure'],
             image: '/projects/devops.png',
-            highlights: ['Multi-stage Builds', 'CI/CD Automation', 'Azure Cloud Deployment', 'High Availability'],
             gridSize: 'lg:col-span-1'
         },
         {
