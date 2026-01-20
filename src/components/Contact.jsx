@@ -57,7 +57,7 @@ const Contact = () => {
         {
             icon: <HiOutlineMapPin className="text-2xl" />,
             label: isEn ? "Location" : "Localisation",
-            value: isEn ? "Tétouan, Morocco" : "Tétouan, Maroc",
+            value: isEn ? "Fes, Morocco" : "Fes, Maroc",
             href: "#"
         }
     ];
