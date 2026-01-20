@@ -41,12 +41,21 @@ const Contact = () => {
         }
     };
 
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = (text) => {
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
     const contacts = [
         {
             icon: <HiOutlineEnvelope className="text-2xl" />,
             label: isEn ? "Email" : "E-mail",
             value: "mohammedaymanesaber@gmail.com",
-            href: "mailto:mohammedaymanesaber@gmail.com"
+            action: () => handleCopy("mohammedaymanesaber@gmail.com"),
+            isCopy: true
         },
         {
             icon: <HiOutlinePhone className="text-2xl" />,
@@ -86,23 +95,45 @@ const Contact = () => {
 
                             <div className="space-y-4">
                                 {contacts.map((contact, index) => (
-                                    <motion.a
-                                        key={index}
-                                        href={contact.href}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.1 }}
-                                        className="flex items-center gap-4 p-4 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-primary-500/50 transition-all group"
-                                    >
-                                        <div className="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 group-hover:bg-primary-500/20 transition-colors">
-                                            {contact.icon}
-                                        </div>
-                                        <div>
-                                            <p className="text-xs font-mono text-gray-500 uppercase tracking-widest">{contact.label}</p>
-                                            <p className="text-white font-medium">{contact.value}</p>
-                                        </div>
-                                    </motion.a>
+                                    contact.isCopy ? (
+                                        <motion.div
+                                            key={index}
+                                            onClick={contact.action}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: index * 0.1 }}
+                                            className="flex items-center gap-4 p-4 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-primary-500/50 transition-all group cursor-pointer"
+                                        >
+                                            <div className="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 group-hover:bg-primary-500/20 transition-colors">
+                                                {contact.icon}
+                                            </div>
+                                            <div>
+                                                <p className="text-xs font-mono text-gray-500 uppercase tracking-widest">{contact.label}</p>
+                                                <p className="text-white font-medium">
+                                                    {copied ? (isEn ? "Copied!" : "Copié !") : contact.value}
+                                                </p>
+                                            </div>
+                                        </motion.div>
+                                    ) : (
+                                        <motion.a
+                                            key={index}
+                                            href={contact.href}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: index * 0.1 }}
+                                            className="flex items-center gap-4 p-4 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-primary-500/50 transition-all group"
+                                        >
+                                            <div className="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 group-hover:bg-primary-500/20 transition-colors">
+                                                {contact.icon}
+                                            </div>
+                                            <div>
+                                                <p className="text-xs font-mono text-gray-500 uppercase tracking-widest">{contact.label}</p>
+                                                <p className="text-white font-medium">{contact.value}</p>
+                                            </div>
+                                        </motion.a>
+                                    )
                                 ))}
 
                                 <motion.a
@@ -145,7 +176,7 @@ const Contact = () => {
                                         className="w-full bg-gray-950 border border-gray-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
                                         placeholder={isEn ? 'Your email' : 'Votre email'}
                                     />
-                                </div>  
+                                </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-400 mb-2 font-mono">MESSAGE</label>
                                     <textarea
