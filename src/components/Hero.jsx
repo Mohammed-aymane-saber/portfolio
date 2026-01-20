@@ -68,6 +68,19 @@ const Hero = () => {
                             <motion.a
                                 whileHover={{ scale: 1.05, backgroundColor: "rgba(31, 41, 55, 1)" }}
                                 whileTap={{ scale: 0.95 }}
+                                href="/Cv-Mohammed-Aymane-Saber.pdf"
+                                download
+                                className="btn-secondary"
+                            >
+                                <svg className="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                <span>{t('common.downloadCV')}</span>
+                            </motion.a>
+
+                            <motion.a
+                                whileHover={{ scale: 1.05, backgroundColor: "rgba(31, 41, 55, 1)" }}
+                                whileTap={{ scale: 0.95 }}
                                 href="https://github.com/Mohammed-aymane-saber"
                                 target="_blank"
                                 rel="noopener noreferrer"

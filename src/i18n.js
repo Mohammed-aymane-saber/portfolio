@@ -55,7 +55,8 @@ i18n
                         problemSolved: "PROBLEM SOLVED",
                         coreStack: "CORE STACK",
                         architecture: "TECHNICAL ARCHITECTURE",
-                        repo: "GITHUB REPO"
+                        repo: "GITHUB REPO",
+                        downloadCV: "DOWNLOAD CV"
                     },
                     howIBuild: {
                         title: "How I Build Things",
@@ -129,7 +130,8 @@ i18n
                         problemSolved: "PROBLÈME RÉSOLU",
                         coreStack: "STACK TECHNIQUE",
                         architecture: "ARCHITECTURE TECHNIQUE",
-                        repo: "DÉPÔT GITHUB"
+                        repo: "DÉPÔT GITHUB",
+                        downloadCV: "TÉLÉCHARGER CV"
                     },
                     howIBuild: {
                         title: "Ma Méthodologie",
