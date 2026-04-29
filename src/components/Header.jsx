@@ -6,19 +6,61 @@ const Header = () => {
     const { t, i18n } = useTranslation();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isLangOpen, setIsLangOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('home');
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
+            
+            // Fallback for top of page
+            if (window.scrollY < 300) {
+                setActiveSection('home');
+            }
         };
 
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const handleIntersect = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(handleIntersect, observerOptions);
+        
+        const sections = ['about', 'experience', 'skills', 'certifications', 'projects', 'how-i-build', 'contact'];
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            observer.disconnect();
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
-        element?.scrollIntoView({ behavior: 'smooth' });
+        if (element) {
+            const offset = 80; // Header height
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     };
 
     const toggleLanguage = (lng) => {
@@ -30,6 +72,7 @@ const Header = () => {
         { key: 'about', label: t('nav.about') },
         { key: 'experience', label: t('nav.experience') },
         { key: 'skills', label: t('nav.skills') },
+        { key: 'certifications', label: t('nav.certifications') },
         { key: 'projects', label: t('nav.projects') },
         { key: 'how-i-build', label: t('nav.howIBuild') },
         { key: 'contact', label: t('nav.contact') }
@@ -72,9 +115,18 @@ const Header = () => {
                                     transition={{ delay: 0.1 * index }}
                                     whileHover={{ y: -2, color: '#0ea5e9' }}
                                     onClick={() => scrollToSection(item.key)}
-                                    className="text-gray-300 hover:text-primary-400 transition-colors duration-300 font-medium relative text-sm"
+                                    className={`transition-all duration-300 font-medium relative text-sm ${
+                                        activeSection === item.key ? 'text-primary-400' : 'text-gray-300'
+                                    }`}
                                 >
                                     {item.label}
+                                    {activeSection === item.key && (
+                                        <motion.div
+                                            layoutId="activeNav"
+                                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary-500 rounded-full"
+                                            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
                                 </motion.button>
                             </li>
                         ))}

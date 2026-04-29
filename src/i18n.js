@@ -15,6 +15,7 @@ i18n
                         skills: "Skills",
                         projects: "Projects",
                         howIBuild: "How I Build",
+                        certifications: "Certifications",
                         contact: "Contact"
                     },
                     hero: {
@@ -79,6 +80,10 @@ i18n
                     projects: {
                         title: "Projects",
                         subtitle: "Selection of engineering solutions & architectures"
+                    },
+                    certifications: {
+                        title: "Certifications",
+                        subtitle: "Official recognitions of my technical expertise"
                     }
                 }
             },
@@ -90,6 +95,7 @@ i18n
                         skills: "Compétences",
                         projects: "Projets",
                         howIBuild: "Méthodologie",
+                        certifications: "Certifications",
                         contact: "Contact"
                     },
                     hero: {
@@ -154,6 +160,10 @@ i18n
                     projects: {
                         title: "Projets",
                         subtitle: "Sélection de solutions d'ingénierie & d'architectures"
+                    },
+                    certifications: {
+                        title: "Certifications",
+                        subtitle: "Reconnaissances officielles de mon expertise technique"
                     }
                 }
             }
