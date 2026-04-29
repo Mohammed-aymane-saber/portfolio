@@ -15,7 +15,13 @@ const Contact = () => {
         setResult(isEn ? "Sending..." : "Envoi en cours...");
 
         const formData = new FormData(event.target);
-        formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+        const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+        if (!accessKey) {
+            setStatus("error");
+            setResult(isEn ? "Contact form is not configured (missing Access Key)." : "Le formulaire n'est pas configuré (clé d'accès manquante).");
+            return;
+        }
+        formData.append("access_key", accessKey);
 
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
