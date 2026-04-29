@@ -68,7 +68,7 @@ const Hero = () => {
                             <motion.a
                                 whileHover={{ scale: 1.05, backgroundColor: "rgba(31, 41, 55, 1)" }}
                                 whileTap={{ scale: 0.95 }}
-                                href="/Cv-Mohammed-Aymane-Saber.pdf"
+                                href="/CV__Mohammed_Aymane_Saber.pdf"
                                 download
                                 className="btn-secondary"
                             >
