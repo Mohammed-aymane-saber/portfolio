@@ -100,8 +100,37 @@ const Projects = () => {
             image: '/projects/devops.png',
             gridSize: 'lg:col-span-1'
         },
+
         {
-            id: 4,
+            id: 4, 
+            title: 'Smart Event Collaboration Platform',
+            shortDesc: isEn ? 'Microservices management with Argo CD & GitOps automation.' : 'Gestion de microservices avec Argo CD et automatisation GitOps.',
+            description: isEn
+                ? 'A high-availability event platform using a microservices architecture, managed via Argo CD for automated GitOps deployments and self-healing cluster states.'
+                : 'Une plateforme d\'événements haute disponibilité utilisant une architecture microservices, pilotée par Argo CD pour des déploiements GitOps automatisés.',
+            problem: isEn
+                ? 'Complexity in synchronizing local developments with a Kubernetes cluster and maintaining service consistency.'
+                : 'Complexité de la synchronisation des développements locaux avec un cluster Kubernetes et maintien de la cohérence des services.',
+            stack: ['Node.js', 'React', 'Docker', 'Kubernetes', 'Argo CD (GitOps)', 'MySQL', 'API Gateway'],
+            architecture: isEn ? [
+                'GitOps Workflow: Automated synchronization between GitHub manifests and the K8s cluster via Argo CD',
+                'Microservices Layer: Independent services for Auth, Events, and Social Interactions',
+                'API Gateway: Centralized routing for unified access to distributed services',
+                'Resource Optimization: Granular K8s resource management with automated self-healing and pruning'
+            ] : [
+                'Workflow GitOps : Synchronisation automatisée entre les manifests GitHub et le cluster K8s via Argo CD',
+                'Microservices Layer : Services indépendants pour l\'Auth, les Événements et les Interactions',
+                'API Gateway : Routage centralisé pour un accès unifié aux services distribués',
+                'Optimisation K8s : Gestion granulaire des ressources avec auto-guérison (Self-healing) automatique'
+            ],
+            github: 'https://github.com/Mohammed-aymane-saber/Smart-Event-Collaboration-Platform',
+            image: '/projects/smart-event.png',
+            highlights: ['Argo CD Integration', 'GitOps Deployment', 'Self-Healing Architecture', 'Microservices Orchestration'],
+            gridSize: 'lg:col-span-2'
+        },
+
+        {
+            id: 5,
             title: 'SystemePDA - Système de Gestion Commerciale Mobile',
             shortDesc: isEn ? 'Real-time synchronized Web & Mobile ERP solution.' : 'Solution ERP Web & Mobile synchronisée en temps réel.',
             description: isEn
@@ -125,10 +154,10 @@ const Projects = () => {
             github: 'https://github.com/Mohammed-aymane-saber/Stage-SystemePDA',
             image: '/projects/systemepda.png',
             highlights: ['Multi-platform (Web & Mobile)', 'Inertia & Laravel 12', 'Stock Real-time', 'Architecture Monorepo'],
-            gridSize: 'lg:col-span-2'
+            gridSize: 'lg:col-span-3'
         },
         {
-            id: 5,
+            id: 6,
             title: 'PétitionsEnLigne - Plateforme de Mobilisation',
             shortDesc: isEn ? 'Petition system with progression tracking.' : 'Système de pétitions avec suivi de progression.',
             description: isEn
@@ -155,7 +184,7 @@ const Projects = () => {
             gridSize: 'lg:col-span-2'
         },
         {
-            id: 6,
+            id: 7,
             title: 'Club & Event Management System',
             shortDesc: isEn ? 'Full associative management with automated certificate generation.' : 'Gestion associative complète avec génération de certificats.',
             description: isEn
@@ -182,7 +211,7 @@ const Projects = () => {
             gridSize: 'lg:col-span-1'
         },
         {
-            id: 7,
+            id: 8,
             title: 'Sports Facility & Tournament Management System',
             shortDesc: isEn ? 'Multi-field reservation system and sports tournament management.' : 'Système de réservation multi-terrains et gestion de tournois.',
             description: isEn
