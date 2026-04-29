@@ -236,7 +236,7 @@ const Projects = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             onClick={() => setSelectedProject(project)}
-                            className={`group cursor-pointer relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/40 hover:border-primary-500/50 transition-all duration-500 ${project.gridSize} aspect-[16/10] md:aspect-auto h-[350px] md:h-[400px]`}
+                            className={`group cursor-pointer relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/40 hover:border-primary-500/50 transition-all duration-500 ${project.gridSize} h-[280px] sm:h-[320px] md:h-[400px]`}
                         >
                             {/* Background Image with Overlay */}
                             <div className="absolute inset-0">
@@ -249,8 +249,8 @@ const Projects = () => {
                             </div>
 
                             {/* Content */}
-                            <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                <div className="space-y-3">
+                            <div className="absolute inset-0 p-5 md:p-8 flex flex-col justify-end">
+                                <div className="space-y-2 md:space-y-3">
                                     <div className="flex gap-2">
                                         {project.highlights.slice(0, 2).map((h, i) => (
                                             <span key={i} className="text-[10px] uppercase tracking-tighter font-bold text-primary-400 bg-primary-500/10 px-2 py-0.5 rounded border border-primary-500/20">
@@ -258,7 +258,7 @@ const Projects = () => {
                                             </span>
                                         ))}
                                     </div>
-                                    <h3 className="text-3xl font-bold text-white group-hover:text-primary-400 transition-colors">
+                                    <h3 className="text-xl md:text-3xl font-bold text-white group-hover:text-primary-400 transition-colors">
                                         {project.title}
                                     </h3>
                                     <p className="text-gray-300 text-sm line-clamp-2 font-light">

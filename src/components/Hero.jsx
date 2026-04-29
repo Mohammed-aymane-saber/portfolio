@@ -107,7 +107,7 @@ const Hero = () => {
                                 <img
                                     src="/profile.png"
                                     alt="Mohammed Aymane Saber"
-                                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 transform hover:scale-105"
+                                    className="w-full h-full object-cover transition-all duration-500 transform hover:scale-105"
                                 />
                             </div>
                             {/* Decorative elements */}
