@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import {
     SiLaravel, SiNodedotjs, SiDotnet, SiReact, SiJavascript, SiAngular, SiVuedotjs,
-    SiNextdotjs, SiTailwindcss, SiDocker, SiAmazonwebservices, SiGit,
-    SiLinux, SiMysql, SiPostgresql, SiMongodb, SiGithub, SiPostman
+    SiNextdotjs, SiTailwindcss, SiDocker, SiAmazonwebservices, SiGit, SiOracle,
+    SiLinux, SiMysql, SiPostgresql, SiMongodb, SiGithub, SiPostman, SiPrometheus, SiGrafana, SiTerraform, SiKubernetes
 } from 'react-icons/si';
 import { FaJava, FaWindows, FaCode } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
@@ -26,6 +26,11 @@ const Skills = () => {
         'Docker': <SiDocker />,
         'AWS': <SiAmazonwebservices />,
         'Azure': <VscAzure />,
+        'Prometheus': <SiPrometheus />,
+        'Grafana': <SiGrafana />,
+        'Terraform': <SiTerraform />,
+        'Kubernetes': <SiKubernetes />,
+        'Oracle Database': <SiOracle />,
         'Git': <SiGit />,
         'Linux': <SiLinux />,
         'MySQL': <SiMysql />,
@@ -40,19 +45,19 @@ const Skills = () => {
     const skillCategories = [
         {
             title: isEn ? 'Backend' : 'Développement Backend',
-            skills: ['Laravel', 'Java', 'Node.js', 'ASP.NET Core', 'REST API', 'Authentication', 'Design Patterns', 'MVC Architecture', 'OOP']
+            skills: ['Laravel', 'Java', 'Node.js', 'ASP.NET Core', 'Spring Boot', 'REST API', 'Design Patterns', 'MVC Architecture', 'OOP']
         },
         {
             title: isEn ? 'Frontend' : 'Développement Frontend',
-            skills: ['React', 'JavaScript', 'Angular', 'Vue', 'Next', 'State Management', 'API Integration', 'Responsive Design', 'Tailwind CSS']
+            skills: ['React', 'JavaScript', 'Angular', 'Vue', 'Next', 'API Integration', 'Responsive Design', 'Tailwind CSS']
         },
         {
             title: isEn ? 'DevOps' : 'Opérations de Développement',
-            skills: ['Docker', 'AWS', 'CI/CD', 'Azure', 'Git', 'Linux', 'Shell Scripting']
+            skills: ['Docker', 'AWS', 'CI/CD', 'Azure', 'Git', 'Terraform', 'Kubernetes', 'Prometheus', 'Grafana']
         },
         {
             title: isEn ? 'Database' : 'Base de données',
-            skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL Server', 'Database Design', 'Eloquent ORM']
+            skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL Server', 'Oracle Database']
         },
         {
             title: isEn ? 'Tools & Systems' : 'Outils & Systèmes',
