@@ -115,8 +115,8 @@ const Certifications = () => {
                         </h4>
                         <p className="text-gray-400 text-sm leading-relaxed">
                             {isEn 
-                                ? "I am committed to staying updated with the latest technologies and industry standards. My certification path focuses on Cloud Architecture, DevOps, and Cybersecurity."
-                                : "Je m'engage à rester à jour avec les dernières technologies et les standards de l'industrie. Mon parcours de certification se concentre sur l'Architecture Cloud, le DevOps ."}
+                                ? "I am committed to staying updated with the latest technologies and industry standards. My certification path focuses on Cloud Architecture and DevOps."
+                                : "Je m'engage à rester à jour avec les dernières technologies et les standards de l'industrie. Mon parcours de certification se concentre sur l'Architecture Cloud et le DevOps ."}
                         </p>
                     </div>
                     <div className="flex-shrink-0">
