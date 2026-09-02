@@ -9,11 +9,11 @@ const Certifications = () => {
 
     const certifications = [
         {
-            title: "AWS Cloud Quest: Cloud Practitioner",
+            title: "AWS Certified Cloud Practitioner",
             issuer: "Amazon Web Services (AWS)",
-            date: "Oct 12, 2025",
+            date: "Aug 16, 2026",
             icon: <SiAmazonwebservices className="text-[#FF9900]" />,
-            link: "https://www.credly.com/badges/e9d6919b-2579-4960-8cff-833dedf4efc7/public_url",
+            link: "https://www.credly.com/badges/bdcf4a44-a413-4ae9-b3a5-94f165920069/public_url",
             skills: ["Cloud Computing", "AWS Services", "Security"]
         },
         {
@@ -26,7 +26,7 @@ const Certifications = () => {
                     <SiKubernetes className="text-[#326CE5]" />
                 </div>
             ),
-            link: "https://www.credly.com/badges/39ad037e-0489-453d-ac5b-605161241a7d/public_url",
+            link: "https://www.credly.com/badges/e9d6919b-2579-4960-8cff-833dedf4efc7/public_url",
             skills: ["Docker", "Kubernetes", "Containerization"]
         }
     ];
