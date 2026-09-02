@@ -5,17 +5,43 @@ import { useTranslation } from 'react-i18next';
 const Experience = () => {
     const { t } = useTranslation();
     const experiences = [
-        {
-            id: 1,
-            role: t('experience.role'),
-            company: "Procom Tech",
-            location: t('experience.location'),
-            period: t('experience.period'),
-            description: t('experience.desc'),
-            achievements: t('experience.achievements', { returnObjects: true }),
-            tech: ["Laravel 12", "React Native", "Expo", "Docker", "Sanctum", "MySQL"]
-        }
-    ];
+    {
+        id: 1,
+        role: t('experience.jinglepay.role'),
+        company: "JinglePay",
+        location: t('experience.jinglepay.location'),
+        period: t('experience.jinglepay.period'),
+        description: t('experience.jinglepay.desc'),
+        achievements: t('experience.jinglepay.achievements', { returnObjects: true }),
+        tech: [
+            "AWS",
+            "Azure",
+            "FinOps",
+            "EKS",
+            "RDS",
+            "Cosmos DB",
+            "Cost Explorer",
+            "Azure Cost Management"
+        ]
+    },
+    {
+        id: 2,
+        role: t('experience.procom.role'),
+        company: "Procom Tech",
+        location: t('experience.procom.location'),
+        period: t('experience.procom.period'),
+        description: t('experience.procom.desc'),
+        achievements: t('experience.procom.achievements', { returnObjects: true }),
+        tech: [
+            "Laravel 12",
+            "React Native",
+            "Expo",
+            "Docker",
+            "Sanctum",
+            "MySQL"
+        ]
+    }
+];
 
     return (
         <section id="experience" className="section bg-gray-950/50 relative overflow-hidden">

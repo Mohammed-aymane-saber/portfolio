@@ -143,7 +143,7 @@ const Contact = () => {
                                 ))}
 
                                 <motion.a
-                                    href="/CV_Mohammed-Aymane-Saber.pdf"
+                                    href="/Mohammed_Aymane_Saber.pdf"
                                     download
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
