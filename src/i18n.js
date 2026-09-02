@@ -54,7 +54,7 @@ i18n
                                 "Identified and implemented rightsizing, cleanup, and autoscaling optimizations across AWS and Azure resources.",
                                 "Worked on optimization opportunities involving AWS EKS, RDS, EC2, and Azure services including App Service Plans, Application Gateway, and Cosmos DB.",
                                 "Implemented and improved autoscaling strategies to reduce idle cloud capacity and improve resource efficiency.",
-                                "Identified approximately $9.7K/month in estimated recurring savings from quantified optimization actions."
+                                "Identified approximately $9K/month in estimated recurring savings from quantified optimization actions."
                             ]
                         },
 
