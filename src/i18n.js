@@ -45,7 +45,7 @@ i18n
                         subtitle: "My Professional Journey",
 
                         jinglepay: {
-                            role: "FinOps Intern",
+                            role: "Cloud Engineer Intern",
                             location: "Remote · UAE",
                             period: "July 2026 — September 2026",
                             desc: "Cloud cost analysis and optimization across JinglePay's AWS and Azure environments, applying FinOps practices to improve resource efficiency and cloud cost visibility.",
@@ -153,7 +153,7 @@ i18n
                         subtitle: "Mon Parcours Professionnel",
 
                         jinglepay: {
-                            role: "Stagiaire FinOps",
+                            role: "Stagiaire Cloud Engineer",
                             location: "À distance · Émirats arabes unis",
                             period: "Juillet 2026 — Septembre 2026",
                             desc: "Analyse et optimisation des coûts cloud sur les environnements AWS et Azure de JinglePay, avec l'application de pratiques FinOps pour améliorer l'efficacité des ressources et la visibilité sur les coûts cloud.",
